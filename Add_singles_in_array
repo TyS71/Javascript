@@ -1,0 +1,27 @@
+function repeats(array){
+  let sum = 0; 
+  for(let j = 0; j < array.length; j++){
+    if(multiCount(array[j],array)){
+    
+    }
+    else{
+      sum += array[j];
+    }
+  }
+  return sum; 
+};
+
+function multiCount(num, arr){
+  let count = 0; 
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === num){
+      count++;  
+    }
+  }
+  if(count > 1){
+    return true 
+  }
+  else{
+    return false 
+  }
+}; 
