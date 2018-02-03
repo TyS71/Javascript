@@ -1,0 +1,22 @@
+// multiply a number by its individual parts until it becomes a single digit.  
+
+
+function persistence(num){
+   const numbers = {
+   '1': 1, '2': 2,
+   '3': 3, '4': 4,
+   '5': 5, '6': 6,
+   '7': 7, '8': 8,
+   '9': 9, '0': 0 };  
+   let newArr = [1]; 
+   num = num.toString();
+   for(let i = 0; i < num.length; i++){
+     newArr *= numbers[num[i]]; 
+   }
+   num = newArr;
+   persistence(num);
+}
+
+// ex. 39, 3*9 = 27, 2*7 = 14, 1 * 4 = 4
+// 25 , 2*5 = 10, 1 * 0 = 0 
+// 66, 6*6 = 36, 3*6 = 18, 1* 8 = 8 
