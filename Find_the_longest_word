@@ -1,0 +1,16 @@
+//find longest word in a string. 
+
+function findLongestWord(str) {
+  var longestWord = '';
+  var newStr = str.split(' '); 
+  for(var i = 0; i < newStr.length; i++){
+    if(newStr[i].length > longestWord.length){
+      longestWord = newStr[i];
+    }
+  }
+  return longestWord.length;
+}
+
+//ex. findLongestWord("The quick brown fox jumped over the lazy dog") should return 6.
+// findLongestWord("What if we try a super-long word such as otorhinolaryngology") should return 19.
+// findLongestWord("What is the average airspeed velocity of an unladen swallow") should return 8.
