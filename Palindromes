@@ -1,0 +1,15 @@
+// Check if the str is a Plaindrome which is the same forward and backwards. ignoring symbols, commas, and spaces.
+
+function palindrome(str) {
+  var compStr = str.replace(/[-_ ,./\()]/g, "");
+  var revStr = compStr.split('').reverse().join(''); 
+  if(compStr.toLowerCase() == revStr.toLowerCase()){
+    return true;
+  }
+   return false;
+}
+
+//ex. palindrome("five|\_/|four") should return false.
+// palindrome("0_0 (: /-\ :) 0-0") should return true.
+// palindrome("A man, a plan, a canal. Panama") should return true.
+// palindrome("not a palindrome") should return false.
