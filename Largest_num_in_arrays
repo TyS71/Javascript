@@ -1,0 +1,20 @@
+// pick out largest number in each array and create a seperate array with them. 
+
+
+function largestOfFour(arr) {
+  var largestNum = 0;
+  var largestArr = []; 
+  for(var i = 0; i < arr.length; i++){
+    for(var j = 0; j < arr.length; j++){
+      if(arr[i][j] > largestNum){
+        largestNum = arr[i][j]; 
+      }
+    } 
+    largestArr.push(largestNum);
+    largestNum = 0; 
+  }
+  return largestArr;
+}
+
+//ex. largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return [27,5,39,1001].
+// largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) should return [9, 35, 97, 1000000]
