@@ -1,0 +1,16 @@
+// Begin each word with capital and lower case the rest. 
+
+function titleCase(str) {
+  str = str.split(' '); 
+  var newStr = ''; 
+  for(var i = 0; i < str.length; i++){
+    newStr += str[i][0].toUpperCase() + str[i].slice(1, str[i].length).toLowerCase() + ' '; 
+  }
+  return newStr.trim();
+}
+
+titleCase("I'm a little tea pot");
+
+//ex. titleCase("I'm a little tea pot") should return "I'm A Little Tea Pot"
+// titleCase("sHoRt AnD sToUt") should return "Short And Stout".
+// titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return "Here Is My Handle Here Is My Spout".
