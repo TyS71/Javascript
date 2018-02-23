@@ -1,0 +1,23 @@
+//Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+//All letters will be uppercase. Do not transform any non-alphabetic character 
+//(i.e. spaces, punctuation), but do pass them on.
+
+function rot13(str) {
+  var decoded = '';
+  for(var i = 0; i < str.length; i++){
+    if(str[i].match(/[a-z]/gi) && str.charCodeAt(i) >= 78){
+      decoded += String.fromCharCode(str.charCodeAt(i) - 13); 
+    }
+    else if(str.charCodeAt(i) < 78 && str.charCodeAt(i) >= 65){
+      decoded += String.fromCharCode(90 - (64 - (str.charCodeAt(i) - 13))); 
+    }
+    else{
+      decoded += str[i]
+    }
+  }
+  return decoded;
+}
+
+//rot13("SERR CVMMN!") should decode to "FREE PIZZA!"
+//rot13("SERR YBIR?") should decode to "FREE LOVE?"
+//rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.") should decode to "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."
