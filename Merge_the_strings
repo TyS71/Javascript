@@ -1,0 +1,30 @@
+//taking 2 strings merge them together in alternating order 
+
+
+function mergeStrings(a, b) {
+    var mergedStr = []; 
+    var i = 0; 
+    if(a.length > b.length){
+        while(i < a.length){
+            mergedStr += a[i];
+            if(b[i] != b[-1]){
+                mergedStr += b[i];
+            }
+            i++;
+        }
+    }
+    else{
+         while(i < b.length){
+            if(a[i] != a[-1]){
+                mergedStr += a[i];
+            }
+            mergedStr += b[i];
+            i++;
+        }
+        
+    }
+    return mergedStr;
+}
+
+//ex abc, def should equal adbecf
+// zbxnsjdns, idowdk should equal zibdxonwsdjkdns
