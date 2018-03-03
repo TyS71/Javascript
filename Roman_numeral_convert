@@ -1,0 +1,76 @@
+// convert the normal numbers to roman numerals 
+
+
+function convertToRoman(num) {
+ var newNum = num.toString().split('');
+ var romanNumerals = [];
+ var romanNums = {
+   'ones': {1: 'I', 2: 'II', 3: 'III',
+  4: 'IV', 5: 'V', 6: 'VI',
+  7: 'VII', 8: 'VIII', 9: 'IX', 0:''},
+           
+   'tens':{
+   1:'X', 2:'XX', 3:'XXX', 
+   4:'XL', 5:'L', 6:'LX',
+   7:'LXX', 8:'LXXX', 9:'XC', 0:''
+ },
+   'hundreds':{
+     1:'C', 2:'CC', 3:'CCC', 
+     4:'CD', 5:'D', 6:'DC', 
+     7:'DCC', 8:'DCCC', 9: 'CM',0:''
+     
+  },
+   'thousands':{
+     1:'M', 2:'MM', 3:'MMM'
+   }
+};
+  if(newNum.length === 4){
+    romanNumerals.push(romanNums.thousands[newNum[0]]);
+    romanNumerals.push(romanNums.hundreds[newNum[1]]);
+    romanNumerals.push(romanNums.tens[newNum[2]]);
+    romanNumerals.push(romanNums.ones[newNum[3]]);
+    return romanNumerals.join('');
+  }
+  else if(newNum.length === 3){
+    romanNumerals.push(romanNums.hundreds[newNum[0]]);
+    romanNumerals.push(romanNums.tens[newNum[1]]);
+    romanNumerals.push(romanNums.ones[newNum[2]]);
+    return romanNumerals.join('');
+    
+  }
+  else if(newNum.length === 2){
+    romanNumerals.push(romanNums.tens[newNum[0]]);
+    romanNumerals.push(romanNums.ones[newNum[1]]);
+    return romanNumerals.join('');
+  }
+  else{
+    romanNumerals.push(romanNums.ones[newNum[0]]);
+    return romanNumerals.join('');
+  }
+}
+
+// ex convertToRoman(2) should return "II".
+//convertToRoman(3) should return "III".
+//convertToRoman(4) should return "IV".
+//convertToRoman(5) should return "V".
+//convertToRoman(9) should return "IX".
+//convertToRoman(12) should return "XII".
+//convertToRoman(16) should return "XVI".
+//convertToRoman(29) should return "XXIX".
+//convertToRoman(44) should return "XLIV".
+//convertToRoman(45) should return "XLV"
+//convertToRoman(68) should return "LXVIII"
+//convertToRoman(83) should return "LXXXIII"
+//convertToRoman(97) should return "XCVII"
+//convertToRoman(99) should return "XCIX"
+//convertToRoman(500) should return "D"
+//convertToRoman(501) should return "DI"
+//convertToRoman(649) should return "DCXLIX"
+//convertToRoman(798) should return "DCCXCVIII"
+//convertToRoman(891) should return "DCCCXCI"
+//convertToRoman(1000) should return "M"
+//convertToRoman(1004) should return "MIV"
+//convertToRoman(1006) should return "MVI"
+//convertToRoman(1023) should return "MXXIII"
+//convertToRoman(2014) should return "MMXIV"
+//convertToRoman(3999) should return "MMMCMXCIX"
