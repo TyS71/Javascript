@@ -1,0 +1,28 @@
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+function sumFibs(num) {
+  var fib = fibonacci(100); 
+  var oddFib = [];
+  for(var i = 0; i < fib.length; i++){
+    if(fib[i] % 2 === 1 && fib[i] <= num){
+      oddFib.push(fib[i]);
+    }
+  }
+  return oddFib.reduce(function(acc, cur){
+    return acc + cur;
+  }, 0);
+}
+function fibonacci(num){
+  var fib = [1, 1]; 
+  for(var i = 1; i < num; i++){
+    fib.push(fib[i] + fib[i - 1]); 
+  }
+  return fib;
+}
+
+// ex sumFibs(1) should return a number.
+// sumFibs(1000) should return 1785.
+// sumFibs(4000000) should return 4613732.
+// sumFibs(4) should return 5.
+// sumFibs(75024) should return 60696.
+// sumFibs(75025) should return 135721.
