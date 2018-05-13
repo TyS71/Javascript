@@ -1,0 +1,26 @@
+//Given an array of strings, return another array containing all of its longest strings.
+
+const allLongestStrings = (inputArray) =>{
+    let longestWords = [];
+    for(let j = 0; j < inputArray.length; j++){
+        if(inputArray[j].length == longestWord(inputArray)){
+            longestWords.push(inputArray[j]);
+        }
+    }
+    return longestWords; 
+}
+const longestWord = (string) =>{
+    let longest = 0; 
+    for(let i = 0; i < string.length; i++){
+        if(string[i].length > longest){
+            longest = string[i].length; 
+        }
+    }
+    return longest;
+}
+
+
+//inputArray: ["aba", "aa", "ad", "vcd", "aba"]  Expected Output: ["aba", "vcd", "aba"]
+//inputArray: ["aa"] Expected Output: ["aa"]
+//inputArray: ["abc", "eeee", "abcd", "dcd"] Expected Output: ["eeee", "abcd"]
+//inputArrayinputA : ["a", "abc", "cbd", "zzzzzz", "a", "abcdef", "asasa", "aaaaaa"] Expected Output:["zzzzzz", "abcdef", "aaaaaa"]
