@@ -1,0 +1,27 @@
+//Ticket numbers usually consist of an even number of digits. A ticket number is considered lucky //
+//if the sum of the first half of the digits is equal to the sum of the second hal//f.
+
+const isLucky = (n) => {
+   let stringN = n.toString();
+   let ticketLength = stringN.length;
+   let firstHalf = stringN.slice(0, (ticketLength / 2));
+   let secondHalf = stringN.slice(ticketLength / 2)
+   let firstSum = 0; 
+   let secondSum = 0; 
+   for(let i = 0; i < firstHalf.length; i++){
+      firstSum += parseInt(firstHalf[i]);
+      secondSum += parseInt(secondHalf[i]);
+   }
+   if(firstSum === secondSum){
+      return true;
+   }
+   return false; 
+}
+
+//Input: n: 1230 Output: true Expected Output: true
+
+//Input: n: 239017 Output: false Expected Output: false
+
+//Input: n: 134008 Output: true Expected Output: true
+
+//Input: n: 261534 Output:false Expected Output: false
